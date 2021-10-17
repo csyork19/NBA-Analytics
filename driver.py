@@ -39,6 +39,8 @@ def get_team_roster(selected_team):
     response = requests.get(url)
     df_list = pd.read_html(response.text) # this parses all the tables in webpages to a list
     df = df_list[0]
+    df = df.drop('No.', 1)
+    df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
     print(df)
 
 def mainMenu():
