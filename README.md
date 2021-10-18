@@ -13,6 +13,7 @@ NBA-Analytics is a simple program that allows users to view nba team rosters and
     - `pip install pandas`
     - `pip install requests`
     - `pip install bs4`
+    - `pip install lxml`
 3. Execution examples
     - Run the command below and follow the instructions on screen:
     - `python driver.py`
