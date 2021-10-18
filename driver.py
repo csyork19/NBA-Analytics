@@ -43,6 +43,11 @@ def get_team_roster(selected_team):
     df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
     print(df)
 
+    # Prompt user to select a player from the roster
+    user_nba_player = input("Please select a player from the roster above. Enter row number: \n")
+    user_nba_player = df.loc[int(user_nba_player),"Player"]
+    print(user_nba_player)
+
 def mainMenu():
     # Prompt user to select from the list of teams
     get_list_of_teams()
@@ -54,5 +59,7 @@ def mainMenu():
 
     # Print team roster
     get_team_roster("".join(teams.split()))
+
+
 
 mainMenu()
