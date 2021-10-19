@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+from bs4 import BeautifulSoup
 
 lines = []
 
@@ -34,6 +35,7 @@ def get_abbreviation_for_user_nba_team(nba_team):
             count +=1
 
 def get_team_roster(selected_team):
+    baseurl = "https://www.basketball-reference.com"
     team = selected_team
     url = 'https://www.basketball-reference.com/teams/'+str(team)+'/2022.html'
     response = requests.get(url)
@@ -47,6 +49,19 @@ def get_team_roster(selected_team):
     user_nba_player = input("Please select a player from the roster above. Enter row number: \n")
     user_nba_player = df.loc[int(user_nba_player),"Player"]
     print(user_nba_player)
+
+    html_text = requests.get(url).text
+    soup = BeautifulSoup(html_text, 'html.parser')
+    results = soup.find_all('a')
+
+    for tag in results:
+        if tag.get_text() == user_nba_player:
+            link = tag.get('href')
+            baseurl += link
+    file = open("urls/player_url.txt","w")
+    file.write(baseurl)
+
+
 
 def mainMenu():
     # Prompt user to select from the list of teams

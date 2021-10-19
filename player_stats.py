@@ -2,7 +2,13 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
-url = 'https://www.basketball-reference.com/players/i/irvinky01.html'
+
+url = None
+with open('urls/player_url.txt','r') as file:
+    for line in file:
+        url = line
+        str(url)
+
 html_text = requests.get(url).text
 soup = BeautifulSoup(html_text, 'html.parser')
 
