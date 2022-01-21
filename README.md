@@ -2,7 +2,7 @@
 
 ## About
 
-NBA-Analytics is a simple program that allows users to view nba team rosters and each player's statistics via command line.
+NBA-Analytics is a simple program that allows users to view NBA team rosters and each player's statistics via command line. The statistics consist of a player's points per game (ppg), total rebounds per game (trb), assists (ast), field goal percentage (fg%), three point percentage (fg3%), and a few other categories. 
 
 
 1. Prerequisites
@@ -17,6 +17,7 @@ NBA-Analytics is a simple program that allows users to view nba team rosters and
 3. Execution examples
     - Run the command below and follow the instructions on screen:
     - `python driver.py`
+    - Once you have selected a player, run the command below:
     - `python player_stats.py`
 
 ### References
