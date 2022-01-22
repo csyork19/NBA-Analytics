@@ -75,6 +75,9 @@ def mainMenu():
     # Print team roster
     get_team_roster("".join(teams.split()))
 
+    # Execute the player_stats.py file after a player is selected
+    exec(open("player_stats.py").read())
+
 
 
 mainMenu()
