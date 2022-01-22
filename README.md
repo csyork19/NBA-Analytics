@@ -18,8 +18,6 @@ NBA-Analytics is a simple program that allows users to view NBA team rosters and
 3. Execution examples
     - Run the command below and follow the instructions on screen:
     - `python3 driver.py`
-    - Once you have selected a player, run the command below:
-    - `python3 player_stats.py`
 
 ### References
 
